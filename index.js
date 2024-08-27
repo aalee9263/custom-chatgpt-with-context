@@ -6,7 +6,7 @@ const ejs = require('ejs');
 require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Initialize OpenAI client with API key from .env
 const openai = new OpenAI({
