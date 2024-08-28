@@ -19,9 +19,7 @@ app.set("view engine", "ejs");
 app.use(cors());
 app.use(bodyParser.json());
 
-// app.get('/', (req, res) => res.render('pages/home'));
-app.get('/', (req, res) => {res.render('pages/home')}); // Ensure this path matches your file structure
-  
+app.get('/', (req, res) => res.render('pages/home'));  
 app.get('/about', (req, res) => res.render('pages/about'));
 app.get('/contact', (req, res) => res.render('pages/contact'));
 
