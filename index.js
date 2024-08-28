@@ -9,9 +9,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Initialize OpenAI client with API key from .env
-const openai = new OpenAI({
-    apiKey: process.env.API_KEY, // Use environment variable for API key
-});
+// const openai = new OpenAI({
+//     apiKey: process.env.API_KEY, // Use environment variable for API key
+// });
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -51,6 +51,8 @@ app.post('/chat', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
+// app.listen(port, () => {
+   // Export the app (no app.listen())
+module.exports = app;
     console.log(`Server is running on http://localhost:${port}`);
-});
+// });
