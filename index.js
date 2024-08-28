@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { OpenAI } = require('openai');
 const ejs = require('ejs');
+const path = require('path');
 require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
@@ -14,8 +15,9 @@ const openai = new OpenAI({
 });
 
 app.use(express.static("public"));
-app.set("views", path.join(__dirname, "views")); // Ensure the correct path to views
 app.set("view engine", "ejs");
+
+app.set("views", path.join(__dirname, "views")); // Ensure the correct path to views
 
 app.use(cors());
 app.use(bodyParser.json());
