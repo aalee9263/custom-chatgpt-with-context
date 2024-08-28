@@ -9,11 +9,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Initialize OpenAI client with API key from .env
-// const openai = new OpenAI({
-//     apiKey: process.env.API_KEY, // Use environment variable for API key
-// });
+const openai = new OpenAI({
+    apiKey: process.env.API_KEY, // Use environment variable for API key
+});
 
 app.use(express.static("public"));
+app.set("views", path.join(__dirname, "views")); // Ensure the correct path to views
 app.set("view engine", "ejs");
 
 app.use(cors());
